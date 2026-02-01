@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Varsha ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fde68a, #fbcfe8, #fef3c7);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      color: #be123c;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #374151;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      min-width: 130px;
+      padding: 14px 20px;
+      font-size: 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    .yes {
+      background: #be123c;
+      color: #ffffff;
+    }
+
+    .no {
+      background: #f3f4f6;
+      color: #374151;
+      position: relative;
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" id="card">
+    <h1>Hey Varsha 💛</h1>
+
+    <p>
+      Life doesn’t always give clear answers.<br />
+      Sometimes it’s just small moments<br />
+      that quietly feel right.<br /><br />
+
+      I’m not asking for perfect.<br />
+      Just honesty, patience,<br />
+      and choosing to move forward together.<br /><br />
+
+      So I wanted to ask you,<br />
+      simply and sincerely.
+      <br /><br />
+      Will you be my Valentine?
+    </p>
+
+    <div class="buttons">
+      <button class="yes" onclick="yesClicked()">Yes 💖</button>
+      <button class="no" id="noBtn" onclick="noClicked()">No 🙈</button>
+    </div>
+
+    <div class="note">
+      some journeys feel lighter when it’s both of us.
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    let dodgeCount = 0;
+    const maxDodges = 3;
+
+    noBtn.addEventListener("touchstart", dodge);
+    noBtn.addEventListener("mouseover", dodge);
+
+    function dodge() {
+      if (dodgeCount < maxDodges) {
+        dodgeCount++;
+        const x = Math.random() * 120 - 60;
+        const y = Math.random() * 120 - 60;
+        noBtn.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    }
+
+    function yesClicked() {
+      document.getElementById("card").innerHTML = `
+        <h1>💘 Then it’s us.</h1>
+        <p>
+          No rush. No pressure.<br />
+          Just warmth, trust,<br />
+          and choosing each other<br />
+          one step at a time.<br /><br />
+          I’m really glad it’s you.
+        </p>
+      `;
+    }
+
+    function noClicked() {
+      document.getElementById("card").innerHTML = `
+        <h1>🤍 Thank you for being honest.</h1>
+        <p>
+          That means a lot, truly.<br /><br />
+          I’m glad I asked,<br />
+          and I hope this still brought a smile.
+        </p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
